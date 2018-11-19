@@ -1,0 +1,41 @@
+z=imread('image.jpeg');
+[ro,co]=size(z);
+x=ro*co;
+new=[];
+new_count=1;
+new1=[];
+new1_count=1;
+img=zeros(ro,co);
+red=z(:,:,1);
+green=z(:,:,2);
+blue=z(:,:,3);
+for c = 1:ro
+    for r = 1:co
+        meanIntensityValue = mean(z(c,r));
+        if  meanIntensityValue==0
+        new(new_count)=z(c,r);
+        new_count=new_count+1;
+        elseif meanIntensityValue==1
+        new1(new1_count)=z(c,r);
+        new1_count=new1_count+1;
+        else
+            continue;
+        end
+    end
+end
+%new_count=95700610;
+for i = 1:1:new_count
+        disp(new(i));
+end
+new1_count=957006;
+disp("---------------------------------------------");
+for j = 1:1:new1_count
+        disp(new1(j));
+end
+
+
+
+
+
+
+
